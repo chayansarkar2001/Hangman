@@ -1,0 +1,99 @@
+body{
+    background-color: rgb(122, 210, 226);
+}
+.App {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.result {
+    font-size: 2rem;
+    font-family: sans-serif;
+}
+.hungman {
+    margin-top: 1rem;
+    position: relative;
+    height: 320px;
+    width: 300px;
+    
+}
+.man {
+    height: 230px;
+    width: 300px;
+    position: relative;
+    transform-origin: center top;
+}
+.hunging{
+    animation-name: hungingman;
+    animation-duration: 3s;
+    animation-delay: 0.5s;
+    animation-iteration-count: 10;
+    animation-timing-function: linear;
+}
+@keyframes hungingman {
+    0% {
+        transform: rotate(0deg);
+    }
+    25% {
+        transform: rotate(15deg);
+    }
+    50% {
+        transform: rotate(-5deg);
+    }
+    75%{
+        transform: rotate(-15deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+.hungman-word {
+    margin-top: 40px;
+}
+.keybord {
+    display: grid;
+    gap: 10px;
+    margin-top: 80px;
+    grid-template-columns:repeat(10, minmax(85px, 1fr));
+    background-color: rgb(42, 42, 43);
+    padding: 9px;
+    border-radius: 5px;
+}
+.keys {
+    background-color: rgb(76, 76, 216);
+    color: white;
+    text-align: center;
+    font-size: 2rem;
+    padding: 5px 10px;
+    border-radius: 7px;
+    cursor: pointer;
+}
+
+.keys:hover:not(.right,.wrong) {
+    background-color: rgb(25, 10, 126);
+    
+}
+.right {
+    background-color: rgb(0, 255, 106);
+    cursor: default;
+}
+.wrong {
+    background-color: rgb(233, 66, 66);
+    cursor: default;
+}
+@media screen and (max-width:900px) {
+    .keybord{
+        grid-template-columns:repeat(7, 75px);
+    }
+}
+@media screen and (max-width:600px) {
+    .keybord{
+        grid-template-columns:repeat(5, 65px);
+    }
+}
+@media screen and (max-width:400px) {
+    .keybord{
+        grid-template-columns:repeat(4,60px);
+    }
+}
